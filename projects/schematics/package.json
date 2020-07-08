@@ -11,15 +11,14 @@
     "url": "https://github.com/po-ui/po-angular"
   },
   "scripts": {
-    "postinstall": "ngcc",
     "tsc": "tsc",
     "build": "npm run tsc -- -p ./tsconfig.json",
     "pack": "gulp replaceVersion && cd ../../dist/ng-schematics && npm pack",
     "postbuild": "gulp copyFilesSchematics && npm run pack"
   },
   "peerDependencies": {
-    "@angular-devkit/core": "~9.1.0",
-    "@angular-devkit/schematics": "~9.1.0",
-    "@schematics/angular": "~9.1.0"
+    "@angular-devkit/core": "~10.0.1",
+    "@angular-devkit/schematics": "~10.0.1",
+    "@schematics/angular": "~10.0.1"
   }
 }

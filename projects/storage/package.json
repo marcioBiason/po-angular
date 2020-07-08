@@ -10,9 +10,6 @@
     "type": "git",
     "url": "https://github.com/po-ui/po-angular"
   },
-  "scripts": {
-    "postinstall": "ngcc"
-  },
   "schematics": "./schematics/collection.json",
   "dependencies": {
     "@po-ui/ng-schematics": "0.0.0-PLACEHOLDER",
@@ -22,7 +19,7 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/core": "~9.1.0",
+    "@angular/core": "~10.0.2",
     "custom-idle-queue": "2.1.2",
     "localforage": "1.4.0",
     "lokijs": "1.5.8",

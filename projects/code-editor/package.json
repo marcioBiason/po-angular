@@ -10,9 +10,6 @@
     "type": "git",
     "url": "https://github.com/po-ui/po-angular"
   },
-  "scripts": {
-    "postinstall": "ngcc"
-  },
   "schematics": "./schematics/collection.json",
   "dependencies": {
     "@po-ui/ng-components": "0.0.0-PLACEHOLDER",
@@ -24,9 +21,9 @@
     "uuid": "^3.3.2"
   },
   "peerDependencies": {
-    "@angular/common": "~9.1.0",
-    "@angular/core": "~9.1.0",
-    "@angular/forms": "~9.1.0",
+    "@angular/common": "~10.0.2",
+    "@angular/core": "~10.0.2",
+    "@angular/forms": "~10.0.2",
     "@po-ui/ng-components": "0.0.0-PLACEHOLDER",
     "monaco-editor": "0.20.0",
     "zone.js": "~0.10.3"
