@@ -18,7 +18,7 @@ import {
 import { DecimalPipe } from '@angular/common';
 import { Router } from '@angular/router';
 
-import { convertToBoolean, getParentRef } from '../../utils/util';
+import { convertToBoolean } from '../../utils/util';
 import { PoDateService } from '../../services/po-date/po-date.service';
 import { PoPopupComponent } from '../po-popup/po-popup.component';
 
@@ -85,7 +85,6 @@ export class PoTableComponent extends PoTableBaseComponent implements AfterViewI
   private differ;
   private footerHeight;
   private initialized = false;
-  private parentRef: any;
   private timeoutResize;
   private visibleElement = false;
 
@@ -127,7 +126,6 @@ export class PoTableComponent extends PoTableBaseComponent implements AfterViewI
   ) {
     super(poDate);
 
-    this.parentRef = getParentRef(viewRef);
     this.differ = differs.find([]).create(null);
 
     // TODO: #5550 ao remover este listener, no portal, quando as colunas forem fixas não sofrem
@@ -232,7 +230,7 @@ export class PoTableComponent extends PoTableBaseComponent implements AfterViewI
 
   executeTableAction(row: any, tableAction: any) {
     if (!row.disabled && !this.validateTableAction(row, tableAction)) {
-      tableAction.action.call(this.parentRef, row);
+      tableAction.action(row);
       this.toggleRowAction(row);
     }
   }
@@ -340,7 +338,7 @@ export class PoTableComponent extends PoTableBaseComponent implements AfterViewI
 
   validateTableAction(row: any, tableAction: any) {
     if (typeof tableAction.disabled === 'function') {
-      return tableAction.disabled.call(this.parentRef, row);
+      return tableAction.disabled(row);
     } else {
       return tableAction.disabled;
     }
